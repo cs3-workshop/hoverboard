@@ -1,5 +1,5 @@
 {
-  "url": "https://hoverboard.firebaseapp.com/",
+  "url": "https://cs3-krakow-2018-dev.firebaseio.com",
   "startDate": "2016-09-09T09:00:00+03:00",
   "endDate": "2016-09-10T19:00:00+03:00",
   "analytics": {
@@ -16,10 +16,10 @@
     "backgroundColor": "#F57C00"
   },
   "firebase": {
-    "name": "hoverboard-master",
-    "domain": "hoverboard-master.firebaseapp.com",
-    "database": "https://hoverboard-master.firebaseio.com",
-    "api": "AIzaSyCaSkhtHekxAqXXzzbuNs2s6CpGdhZdta8",
+    "name": "cs3-krakow-2018-dev",
+    "domain": "cs3-krakow-2018-dev.firebaseapp.com",
+    "database": "https://cs3-krakow-2018-dev.firebaseio.com",
+    "api": "AIzaSyBFP4gcAFuKc-Fjb11r2-8tXl_u4xLlOqM",
     "userSessionsPath": "/userSessions",
     "ratingsPath": "/ratings",
     "indexedDbSession": "hoverboard"
