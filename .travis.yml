@@ -19,6 +19,9 @@ install:
 script: echo "Deploying!"
 before_deploy: 
   - npm run build
+  - echo TRAVIS_BRANCH=$TRAVIS_BRANCH
+  - echo TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST
+  - echo TRAVIS_TAG=$TRAVIS_TAG
   - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make configure-prod ; fi
   - if [ "$TRAVIS_BRANCH" = "develop" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make configure-dev ; fi
 deploy:
