@@ -15,8 +15,12 @@ addons:
     - g++-4.8
 install:
 - npm install
+
 script: echo "Deploying!"
-before_deploy: npm run build
+before_deploy: 
+  - npm run build
+  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make configure-prod ; fi
+  - if [ "$TRAVIS_BRANCH" = "develop" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make configure-dev ; fi
 deploy:
 - provider: firebase
   skip_cleanup: true
