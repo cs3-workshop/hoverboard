@@ -22,8 +22,10 @@ before_deploy:
   - echo TRAVIS_BRANCH=$TRAVIS_BRANCH
   - echo TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST
   - echo TRAVIS_TAG=$TRAVIS_TAG
-  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make configure-prod ; fi
   - if [ "$TRAVIS_BRANCH" = "develop" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make configure-dev ; fi
+    # because of conditions in deploy section on only a tag from master branch will reach this
+  - if [ "$TRAVIS_TAG" = "$TRAVIS_BRANCH" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then make configure-prod ; fi
+
 deploy:
 - provider: firebase
   skip_cleanup: true
